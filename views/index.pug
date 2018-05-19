@@ -1,0 +1,40 @@
+doctype html
+html
+	head
+		title HN Feed
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css')
+		link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.0.13/css/all.css')
+	body
+		div
+			div.jumbotron
+				h1 HN Feed
+				p.lead We <3 hacker news
+
+
+			table.table.table-hover
+				tbody
+					each item in newsList
+						tr
+							td 
+								if item.story_title === null
+									if item.story_url === null
+										a(href=item.url target='_blank')  #{item.title}
+										span  - #{item.author} -
+									else
+										a(href=item.story_url target='_blank')  #{item.title}
+										span  - #{item.author} -
+								else
+									if item.story_url === null 
+										a(href=item.url target='_blank')  #{item.story_title}
+										span  - #{item.author} -
+									else
+										a(href=item.story_url target='_blank')  #{item.story_title}
+										span  - #{item.author} -	 
+							td
+								p.date #{moment(item.created_at).fromNow()}
+							td
+								i.far.fa-trash-alt(data-id=item.story_id)
+		
+
+		script(type='text/javascript' src="./public/front.js")
+			
