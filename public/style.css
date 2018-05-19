@@ -1,0 +1,33 @@
+.jumbotron{
+	background: #373737;
+	color: #fff;
+	border-radius: 0;
+}
+
+
+.table td{
+	border-top: 1px solid #ccc;
+	font-size:13pt;
+
+}
+
+span {
+	color: #999;
+}
+
+a {
+	color: #333;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #fafafa;
+}
+
+.far{
+	display: none;
+}
+
+.table-hover tbody tr:hover > td .far {
+	display: block;
+	cursor:pointer;
+}
